@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "node ./bin/www",
+    "start": "nodemon",
+    "test": "(dropdb --if-exists test-nodejsbookdb && createdb test-nodejsbookdb) && set NODE_ENV=test&&mocha"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
@@ -13,6 +15,12 @@
     "knex": "^0.13.0",
     "morgan": "~1.7.0",
     "pg": "^6.4.0",
+    "pgtools": "^0.2.3",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
   }
 }
