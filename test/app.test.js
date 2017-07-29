@@ -65,4 +65,23 @@ describe('CRUD KNEX', () => {
         done();
       });
   });
+
+  it("Update one record", (done) => {
+    fixtures.sticker.rating += 1;
+    delete fixtures.sticker.id;
+
+    request(app)
+      .put('/api/v1/stickers/1')
+      .send(fixtures.sticker)
+      .set('Accept', 'applicaion/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((response) => {
+        expect(response.body).to.be.a('object');
+        fixtures.sticker.id = response.body.id;
+        console.log(response.body);
+        expect(response.body).to.deep.equal(fixtures.sticker);
+        done();
+      });
+  });
 });
