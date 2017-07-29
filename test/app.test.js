@@ -32,7 +32,7 @@ describe('CRUD KNEX', () => {
         expect(response.body).to.deep.equal(fixtures.stickers);
         done();
       });
-  })
+  });
 
   it("Show one record by id", (done) => {
     // console.log("Its working!");
@@ -48,5 +48,21 @@ describe('CRUD KNEX', () => {
         expect(response.body).to.deep.equal(fixtures.stickers[0]);
         done();
       });
-  })
+  });
+
+  it("Create one record", (done) => {
+    request(app)
+      .post('/api/v1/stickers')
+      .send(fixtures.sticker)
+      .set('Accept', 'applicaion/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((response) => {
+        expect(response.body).to.be.a('object');
+        fixtures.sticker.id = response.body.id;
+        console.log(response.body);
+        expect(response.body).to.deep.equal(fixtures.sticker);
+        done();
+      });
+  });
 });

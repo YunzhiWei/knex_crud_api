@@ -26,6 +26,14 @@ const stickers = [
     url: 'http://www.express.io' }
 ];
 
+const sticker = {
+  title: 'git',
+  description: 'git logo',
+  rating: 7,
+  url: 'http://www.github.com'
+};
+
 module.exports = {
-  stickers
+  stickers,
+  sticker
 };
