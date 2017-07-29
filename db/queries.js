@@ -13,4 +13,7 @@ module.exports = {
   updateOne(id, sticker) {
     return knex('sticker').where('id', id).update(sticker, '*');  // '*' to return the record in http response
   },
+  deleteOne(id, sticker) {
+    return knex('sticker').where('id', id).del();
+  },
 };
