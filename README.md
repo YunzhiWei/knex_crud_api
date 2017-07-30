@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=knoQaoTT7g0&amp;index=2&amp;list=PLM_i0obccy3uwR
 
 # Log
 
-- Create heroku application
+- 20170730 Create heroku application
 
   1. Create heroku app with heroku-cli
 
@@ -44,6 +44,49 @@ https://www.youtube.com/watch?v=knoQaoTT7g0&amp;index=2&amp;list=PLM_i0obccy3uwR
     knex-crud-api::DATABASE=> \q
     ```
 
+  4. open heroku application
+
+    ```
+    > heroku open
+    ```
+
+  5. open heroku logs and keep watching
+
+    ```
+    >heroku logs -t
+    ```
+
+  6. execute db migration
+
+    ```
+    >heroku run knex migrate:latest
+    ```
+
+  7. check db connection again
+
+    ```
+      E:\nodejs\knex_crud_api>heroku pg:psql
+    --> Connecting to postgresql-round-39560
+    psql (9.6.2, 服务器 9.6.1)
+    SSL 连接（协议：TLSv1.2，密码：ECDHE-RSA-AES256-GCM-SHA384，密钥位：256，压缩：关闭)
+    输入 "help" 来获取帮助信息.
+
+    knex-crud-api::DATABASE-> \dt
+                             关联列表
+     架构模式 |         名称         |  类型  |     拥有者
+    ----------+----------------------+--------+----------------
+     public   | knex_migrations      | 数据表 | jjshdfpxgxslno
+     public   | knex_migrations_lock | 数据表 | jjshdfpxgxslno
+     public   | sticker              | 数据表 | jjshdfpxgxslno
+    (3 行记录)
+    ```
+
+  8. seed
+
+    ```
+    >heroku run knex seed:run
+    ```
+    
 - Execute migration
 
   ```
