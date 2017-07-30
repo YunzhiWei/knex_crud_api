@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node ./bin/www",
-    "start": "nodemon",
+    "start": "node ./bin/www",
     "test": "(dropdb --if-exists test-nodejsbookdb && createdb test-nodejsbookdb) && set NODE_ENV=test&&mocha"
   },
   "dependencies": {
