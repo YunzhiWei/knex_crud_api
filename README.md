@@ -1,6 +1,8 @@
 # knex_crud_api
 
-https://www.youtube.com/watch?v=knoQaoTT7g0&amp;index=2&amp;list=PLM_i0obccy3uwR6ZYa7QE03xDRAqs4Aso
+- [Video - CRUD API with Node.js/Express/Knex/Postgres](https://www.youtube.com/playlist?list=PLM_i0obccy3uwR6ZYa7QE03xDRAqs4Aso)
+
+- [Vedio - Build a De-Coupled Full Stack JavaScript CRUD App with Node/Express/Postgres/Knex/jQuery/Bootstrap](https://www.youtube.com/watch?v=RCHSuEfKJ8g)
 
 # Resource
 
@@ -8,7 +10,11 @@ https://www.youtube.com/watch?v=knoQaoTT7g0&amp;index=2&amp;list=PLM_i0obccy3uwR
 
 # Log
 
-- 20170730 Create heroku application
+- 20170730: Add CORS support
+
+  > Please refer to [this page](https://www.npmjs.com/package/cors) for more details
+
+- 20170730: Create heroku application
 
   1. Create heroku app with heroku-cli
 
@@ -86,7 +92,7 @@ https://www.youtube.com/watch?v=knoQaoTT7g0&amp;index=2&amp;list=PLM_i0obccy3uwR
     ```
     >heroku run knex seed:run
     ```
-    
+
 - Execute migration
 
   ```
