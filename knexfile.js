@@ -16,5 +16,10 @@ module.exports = {
       user:     'nodejs_app',
       password: '123456'
     }
+  },
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL
+    }
   }
 };
